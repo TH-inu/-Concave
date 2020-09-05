@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "conio.h"  // Scanf Keyboard
 #define SZ 39
 char Board[SZ][SZ];
 
@@ -8,6 +9,14 @@ int main()
 {
     InitBoard();
     PrintBoard();
+
+    char c;
+    while (kbhit() == 0)
+        PrintBoard();
+    c = getch();
+
+    printf("%c", c);
+
     return 0;
 }
 
